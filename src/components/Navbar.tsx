@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const links = [
   { label: "About", to: "/#about" },
-  { label: "Experience", to: "/#experience" },
   { label: "Projects", to: "/#projects" },
+  { label: "Experience", to: "/#experience" },
   { label: "Contact", to: "/#contact" },
 ];
 
@@ -33,8 +33,19 @@ export function Navbar() {
             </a>
           ))}
           <ThemeToggle />
-          <Button variant="hero" size="sm" className="ml-3" asChild>
-            <a href="#contact">Download my CV</a>
+          <Button
+            variant="hero"
+            size="sm"
+            className="ml-3"
+            asChild
+          >
+            <a
+              href="https://drive.google.com/file/d/1kfY9_zj8EGXqluuktFgI0-pIBfJPnst9/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download my CV
+            </a>
           </Button>
         </div>
 
@@ -60,8 +71,19 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-           <Button variant="hero" size="sm" className="ml-3" asChild>
-            <Link to="/#contact">Download my CV</Link>
+          <Button
+            variant="hero"
+            size="sm"
+            className="ml-3"
+            asChild
+          >
+            <a
+              href="https://drive.google.com/file/d/1kfY9_zj8EGXqluuktFgI0-pIBfJPnst9/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download my CV
+            </a>
           </Button>
         </div>
       )}

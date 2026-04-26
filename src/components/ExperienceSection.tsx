@@ -27,7 +27,7 @@ const jobs = [
     ],
   },
   {
-    role: "Automation & Equipment Technician",
+    role: "Manufacturing & Equipment Technician",
     company: "STMicroelectronics & Amkor Technology Philippines",
     period: "Jun 2014 – Sep 2023",
     bullets: [
@@ -51,10 +51,10 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-4xl">
         <div className="text-center">
           <p className={`mb-3 text-sm font-semibold uppercase tracking-widest text-primary transition-all duration-700 ${isVisible ? "opacity-100" : "opacity-0 translate-y-4"}`}>
-            My Journey
+            Experience & Training
           </p>
           <h2 className={`font-display text-3xl font-bold tracking-tight sm:text-4xl transition-all duration-700 delay-100 ${isVisible ? "opacity-100" : "opacity-0 translate-y-4"}`}>
-            10+ Years in Automation & Process Optimization
+            Engineering Systems → Web Development
           </h2>
         </div>
 

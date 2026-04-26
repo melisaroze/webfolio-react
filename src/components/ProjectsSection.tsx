@@ -3,62 +3,46 @@ import { ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
 
-const categories = ["All","Web Apps", "Automation"];
+const categories = ["All","Web Apps", "Automation & Integrations"];
 
 const projects = [
   { 
-    id: "oeeCalculator",
     title: "OEE Calculator", 
     cat: "Web Apps", 
+    tools: "Reactjs",
     desc: "Overall Equipment Effectiveness calculator for manufacturing efficiency tracking.",
-    image: "/projects/oeecal.jpg",
+    image: "/projects/oee.jpg",
     link: "https://oee-calculator.vercel.app/" },
   { title: "Blog Post App", 
     cat: "Web Apps", 
+    tools: "Reactjs",
     desc: "Full-stack blog application with content management and publishing workflows.",
-    image: "/projects/blogpost.jpg",
+    image: "/projects/blog.jpg",
     link: "https://blog-post-client-alvarez.vercel.app/" },
+
     /* Zapier */
-  { id: "automatedLeadEnrichment",
-    title: "Automated Lead Enrichment", 
-    cat: "Automation", 
-    desc: "Automatically enrich new leads with company data and social profiles from multiple sources.",
-    image: "/projects/zapier11.jpg"},
   { id: "automatedSocialMediaPost",
     title: "Automated Content Repurposing & Social Media Distribution System", 
-    cat: "Automation", 
+    tools: "Zapier",
+    cat: "Automation & Integrations", 
     desc: "Schedule and publish content across platforms automatically from a single source.",
-    image: "/projects/zapier33.png"},
-  { id: "asanaCRMLeadEngagement",
-    title: "Asana CRM Lead Engagement Workflow", 
-    cat: "Automation", 
-    desc: "Automated lead follow-up and engagement tracking through Asana tasks.",
-    image: "/projects/zapier22.jpg"},
+    image: "/projects/zapier3.jpg"},
 
     /* Make.com */
-  { id: "asanaXeroTransaction",
-    title: "Asana-Triggered Xero Transaction Export Automation", 
-    cat: "Automation", 
-    desc: "Automatically fetches filtered bank transactions from Xero, logs them in Google Sheets, converts to CSV, and sends back to Asana — fully automated with Make.com.",
-    image: "/projects/make22.jpg"},
   { id: "attachmentProcessAndLogger",
     title: "AI-Powered Attachment Processor & Logger", 
-    cat: "Automation", 
+    cat: "Automation & Integrations", 
+    tools: "Make.com",
     desc: "A smart automation that instantly analyze incoming email attachments, extract key data into Google Sheets, and provide a professional confirmation to the sender—removing all manual data entry.",
-    image: "/projects/make11.jpg"},
+    image: "/projects/make1.jpg"},
 
     /*n8n*/
   { id:"aiFbAgent",
     title: "AI FB Agent", 
-    cat: "Automation", 
+    cat: "Automation & Integrations", 
+    tools: "n8n",
     desc: "A smart AI-driven assistant that instantly analyzes incoming Facebook messages and document data to provide professional, human-like responses while you focus on your business.",
-  image: "/projects/n8n11.png",},
-  { id: "aiJobScraper",
-    title: "AI Jobs Scraper + Resume Optimizer", 
-    cat: "Automation", 
-    desc: "A smart AI-driven assistant that instantly analyzes incoming Facebook messages and document data to provide professional, human-like responses while you focus on your business.",
-    image: "/projects/n8n22.png",
-    link: "https://oee-calculator.vercel.app/" }
+  image: "/projects/n8n1.jpg",}
 ];
 
 export function ProjectsSection() {
@@ -76,7 +60,7 @@ export function ProjectsSection() {
             Projects
           </p>
           <h2 className={`font-display text-3xl font-bold tracking-tight sm:text-4xl transition-all duration-700 delay-100 ${isVisible ? "opacity-100" : "opacity-0 translate-y-4"}`}>
-            Automation & Web Solutions I've Built
+            Technical Projects and Automation Solutions
           </h2>
         </div>
 
@@ -167,9 +151,21 @@ export function ProjectsSection() {
                   />
                 </h3>
 
+
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {p.desc}
                 </p>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {(p.tools ? p.tools.split(",") : []).map((tool) => (
+                    <span
+                      key={tool.trim()}
+                      className="px-2 py-0.5 text-[11px] rounded-md bg-secondary text-muted-foreground"
+                    >
+                      {tool.trim()}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
